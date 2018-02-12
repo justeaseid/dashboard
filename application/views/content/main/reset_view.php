@@ -30,7 +30,7 @@
         <div class="register-box">
             <div class="register-logo">
 
-                <img src="<?php echo LOGO; ?>" height="90" width="225" alt="kumparan">
+                <img src="<?php echo LOGO; ?>" height="55" width="225" alt="kumparan">
             </div>
 
             <div class="register-box-body">

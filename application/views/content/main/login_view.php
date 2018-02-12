@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>justease | Log in</title>
 
-        <link rel="shortcut icon" href="<?php echo LOGO_SINGLE; ?>" />
+        <link rel="shortcut icon" href="<?php echo ICON; ?>" />
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.5 -->
@@ -30,7 +30,7 @@
     <body class="hold-transition login-page">
         <div class="login-box">
             <div class="login-logo">
-                <img src="<?php echo LOGO_FULL; ?>" height="50" width="225" alt="justease">
+                <img src="<?php echo LOGO; ?>" height="55" width="225" alt="justease">
             </div><!-- /.login-logo -->
             <div class="login-box-body">
                 <p class="login-box-msg"><?php echo $status; ?></p>

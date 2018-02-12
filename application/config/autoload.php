@@ -55,7 +55,7 @@ $autoload['packages'] = array();
   |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
  */
 
-$autoload['libraries'] = array('database', 'session', 'functional', 'fb_formatter', 'tw_formatter', 'ins_formatter');
+$autoload['libraries'] = array('database', 'session', 'functional');
 
 
 /*
@@ -112,7 +112,7 @@ $autoload['language'] = array();
   |
  */
 
-$autoload['model'] = array('ttopic_model', 'itopic_model', 'ftopic_model', 'kmp_model', 'profile_model', 'fb_model', 'tw_model', 'ins_model');
+$autoload['model'] = array('kmp_model', 'profile_model');
 
 
 /* End of file autoload.php */

@@ -228,7 +228,7 @@ $config['cache_path'] = '';
 |
 */
 //$config['encryption_key'] = 'your_encryption_key_here';
-$config['encryption_key'] = 'ezytravel';
+$config['encryption_key'] = 'justease';
 
 /*
 |--------------------------------------------------------------------------

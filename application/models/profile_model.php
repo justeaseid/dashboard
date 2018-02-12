@@ -21,7 +21,7 @@ class Profile_model extends CI_Model {
     function insert_profile($data) {
         $email = $data["email"];
         $q = "";
-        $q = "SELECT * FROM user "
+        $q = "SELECT * FROM js_user "
                 . "WHERE email = '$email'";
 
         $result = $this->db->query($q);
@@ -36,7 +36,7 @@ class Profile_model extends CI_Model {
     function login_profile($email, $password) {
         $q = "";
         $password = $this->functional->encrypt($password);
-        $q = "SELECT * FROM user "
+        $q = "SELECT * FROM js_user "
                 . "WHERE email = '$email' "
                 . "AND password = '$password'";
         //echo $q;
@@ -53,7 +53,7 @@ class Profile_model extends CI_Model {
 
     function all_profile() {
         $q = "";
-        $q = "SELECT * FROM user ";
+        $q = "SELECT * FROM js_user ";
         $result = $this->db->query($q);
         // output: all user information
         return $result;
@@ -78,16 +78,16 @@ class Profile_model extends CI_Model {
             $login_status = FALSE;
 
         // check user is exist on database
-        $q = "SELECT * FROM user "
+        $q = "SELECT * FROM js_user "
                 . "WHERE email = '$email'";
         $result = $this->db->query($q);
         $uri= array();
         if ($result->num_rows() == 1){
             $user_status = TRUE;
             foreach ($result->result_array() as $row) {
-                $uri["id_user"] = $row['id_user'];
+                $uri["id_user"] = $row['user_id'];
                 $uri["name"] = $row['name'];
-                $uri["access"] = $row['access'];
+                $uri["access"] = $row['level_id'];
             }
         }else{
             $user_status = FALSE;
@@ -114,7 +114,7 @@ class Profile_model extends CI_Model {
         $enc_email = $uri_input["enc_email"];
         $email = $this->functional->decrypt($enc_email);
         $q = "";
-        $q = "SELECT * FROM user "
+        $q = "SELECT * FROM js_user "
                 . "WHERE email = '$email'";
         //echo $q;
         // output: all user information
@@ -124,14 +124,14 @@ class Profile_model extends CI_Model {
             $data = array();
             foreach ($result->result_array() as $row) {
                 $data["email"] = $row["email"];
-                $data["id_user"] = $row["id_user"];
+                $data["id_user"] = $row["user_id"];
                 $data["password"] = $this->functional->decrypt($row["password"]);
                 $data["name"] = $row['name'];
                 $data["role"] = $row["role"];
-                $data["access"] = $row['access'];
-                $data["sex"] = $row["sex"];
+                $data["access"] = $row['level_id'];
+                $data["sex"] = $row["gender"];
                 $date_created = $row["date_created"];
-                $new_date = explode(' ', $date_created);
+                $new_date = explode(' ', $created_date);
                 $data["date_created"] = $new_date[0];
                 $data["check"] = "1";
             }
