@@ -1,0 +1,68 @@
+.btn{
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -khtml-border-radius: 5px;
+                border-radius: 5px;
+            }
+            .chartContainer{
+                /*width:430px;
+                height:330px;*/
+                width:450px;
+                height:400px;
+            }
+            * {margin: 0; padding: 0}
+
+            body {
+                font-family: verdana;
+                font-size: x-small;
+            }
+
+
+            .center {
+                display: inline-block;
+                text-align: justify;
+                width: 400px;
+            }
+
+            h2 {
+                text-align: center;
+            }
+
+            hr {
+
+                margin-bottom: 20px;
+            }
+
+            .mylist {
+                list-style-type: none;
+            }
+
+            .even {
+                background-color: azure;
+            }
+
+            #attr_list div {
+                display: inline-block;
+            }
+
+            #attr_list .key {
+                width: 250px;
+            }
+
+            #attr_list .value {
+                width: 250px;
+            }
+
+            #doc_list div {
+                display: inline-block;
+            }
+
+            #doc_list .id {
+                width: 10px;
+                vertical-align: top;
+            }
+
+            #doc_list .spacer {
+                border-left: 1px solid gray;
+                width: 378px;
+            }

@@ -1,0 +1,108 @@
+/* 
+    Created on : Oct 21, 2015, 2:33:06 PM
+    Author     : Parama_Fadli_Kurnia
+*/
+
+.icon_ezy{
+    width:30px;
+    height:30px;
+    border-radius: 8px;
+}
+
+.btn-group-layer{
+    /*background-color: #de3e00;*/
+    color: #fff;
+    border-color:#f74d0a;
+    background-color: #f74d0a;
+}
+
+.btn-group-layer:hover{
+    /*background-color: #de3e00;*/
+    color: #fff;
+    border-color:#de3e00;
+    background-color: #de3e00;
+}
+
+.btn-group-layer:enabled{
+    /*background-color: #de3e00;*/
+    color: #fff;
+    border-color:#de3e00;
+    background-color: #de3e00;
+}
+
+
+.chart_scroll-analysis{
+    /* chart scroll analysis css */
+    height: 500px; 
+    overflow-y: scroll;
+}
+
+.chart_noscroll-analysis{
+    /* chart from noscroll analysis */
+    height: 500px; 
+    overflow-y: hidden;
+}
+
+.iframe_box-analysis{
+    width: 100%;
+    border: 0px solid #eee;
+    height: 500px; 
+    overflow-y: hidden;
+}
+
+.tab_analysis{
+    width: 100%; 
+    height: 500px; 
+    overflow-y: hidden; 
+    border: 0px solid #eee;
+}
+
+.dashboard_analysis{
+    width: 100%; 
+    height: 300px; 
+    overflow-y: hidden; 
+    border: 0px solid #eee;
+}
+
+.dashboard_analysis2{
+    width: 100%; 
+    height: 375px; 
+    overflow-y: hidden; 
+    border: 0px solid #eee;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #de3e00;
+    border-color: #de3e00;
+}
+
+.btn-third {
+    color: #fff;
+    background-color: #00a65a;
+    border-color: #00a65a;
+}
+
+.btn-fourth {
+    color: #fff;
+    background-color: #dd4b39;
+    border-color: #dd4b39;
+}
+
+.btn-fifth {
+    color: #fff;
+    background-color: #de3e00;
+    border-color: #de3e00;
+}
+
+.label-secondary {
+    color: #fff;
+    background-color: #606060;
+    border-color: #606060;
+}
+
+.label-third {
+    color: #fff;
+    background-color: #551a8b;
+    border-color: #551a8b;
+}
