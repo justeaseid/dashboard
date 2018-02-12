@@ -1,2 +1,3 @@
-# Social Modia Monitoring & Analysis
-Author : Parama Fadli Kurnia
+# Admin Apps for justease.id
+Author : 
+- Parama Fadli Kurnia
