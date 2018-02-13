@@ -45,7 +45,26 @@ class User extends CI_Controller {
         $data = array();
         $data = $this->profile_model->profile_exist($uri);
         
-//        $data["json_result"] = $result;
+        $json_result = $this->profile_model->all_profile();
+        
+        $data["title"] = "User";
+        $data["value"] = "user";
+        $data["json_result"] = $json_result;
+        $this->load->view("content/component/monitoring_view", $data);
+    }
+    
+    function add() {
+        $uri = array();
+        $uri = $this->get_url();
+
+        $data = array();
+        $data = $this->profile_model->profile_exist($uri);
+        
+        $json_result = $this->profile_model->all_profile();
+        
+        $data["title"] = "User";
+        $data["value"] = "add_user";
+//        $data["json_result"] = $json_result;
         $this->load->view("content/component/monitoring_view", $data);
     }
 

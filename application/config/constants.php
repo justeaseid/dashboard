@@ -84,8 +84,8 @@ define('LOGO_SINGLE', DIST_IMG . '/logo/brand_logo_trans.png');
 define('ICON', DIST_IMG . '/logo/js_logo_small.png');
 define('MAN', DIST_IMG . '/avatar/avatar5.png');
 define('WOMAN', DIST_IMG . '/avatar/avatar2.png');
-//define('USER_ICON', DIST_IMG . '/avatar/admin.png');
-define('USER_ICON', DIST_IMG . '/avatar/avatar5.png');
+define('USER_ICON', DIST_IMG . '/avatar/user.png');
+//define('USER_ICON', DIST_IMG . '/avatar/avatar5.png');
 
 /* special config */
 define('MYTIME', date_default_timezone_set('Asia/Jakarta'));
