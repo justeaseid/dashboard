@@ -55,7 +55,7 @@ class Category extends CI_Controller {
         $data = array();
         $data = $this->profile_model->profile_exist($uri);
 
-        $json_result = $this->profile_model->all_profile();
+//        $json_result = $this->profile_model->all_profile();
 
         $data["title"] = "Article Category";
         $data["value"] = "add_category";
