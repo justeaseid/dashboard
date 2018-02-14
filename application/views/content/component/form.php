@@ -33,6 +33,12 @@
                     $this->load->view('content/add/add_operational');
                 } else if ($value == "edit_operational") {
                     $this->load->view('content/edit/edit_operational');
+                } else if ($value == "payment") {
+                    $this->load->view('content/tables/table_payment');
+                } else if ($value == "add_payment") {
+                    $this->load->view('content/add/add_payment');
+                } else if ($value == "edit_payment") {
+                    $this->load->view('content/edit/edit_payment');
                 }
                 ?>
             </div>
