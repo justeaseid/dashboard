@@ -366,6 +366,32 @@ class Functional {
 
         return $output;
     }
+    
+    function make_token() {
+        $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+        $pass = array(); //remember to declare $pass as an array
+        $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+        for ($i = 0; $i < 24; $i++) {
+            $n = rand(0, $alphaLength);
+            $pass[] = $alphabet[$n];
+        }
+        $str_pass = implode($pass);
+
+        $numlink = '0123456789';
+        $pass_numlink = array(); //remember to declare $pass as an array
+        $numlinkLength = strlen($numlink) - 1; //put the length -1 in cache
+        for ($i = 0; $i < 16; $i++) {
+            $n = rand(0, $numlinkLength);
+            $pass_numlink[] = $numlink[$n];
+        }
+        $str_numlink = implode($pass_numlink);
+        $token = $str_pass . "|" . $str_numlink;
+        $data = array();
+        $data["tk_apps"] = $str_numlink;
+        $data["tk_secret"] = $str_pass;
+        $data["tk_token"] = $token;
+        return $data; //turn the array into a string
+    }
 
     function test() {
         $mylist = array(
