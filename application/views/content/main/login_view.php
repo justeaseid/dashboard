@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="<?php echo DIST_CSS; ?>/AdminLTE.min.css">
         <!-- iCheck -->
         <link rel="stylesheet" href="<?php echo PLUGINS; ?>/iCheck/square/blue.css">
+        <meta name="google-site-verification" content="P0FkDRxJkwDaiKg7LS7JjRsb-iJ3P0elG41TSjDoPac" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
