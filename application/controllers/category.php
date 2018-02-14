@@ -8,7 +8,7 @@ if (!defined('BASEPATH'))
  * author : Parama Fadli Kurnia
  */
 
-class Tag extends CI_Controller {
+class Category extends CI_Controller {
     /* put your code here */
 
     // constructor
@@ -31,7 +31,6 @@ class Tag extends CI_Controller {
     /* load login_view */
 
     function index() {
-        
     }
 
     function data() {
@@ -41,10 +40,10 @@ class Tag extends CI_Controller {
         $data = array();
         $data = $this->profile_model->profile_exist($uri);
 
-        $json_result = $this->kmp_model->getAllData("js_case_category");
+        $json_result = $this->kmp_model->getAllData("js_category");
 
-        $data["title"] = "Case Category";
-        $data["value"] = "tag";
+        $data["title"] = "Article Category";
+        $data["value"] = "category";
         $data["json_result"] = $json_result;
         $this->load->view("content/component/monitoring_view", $data);
     }
@@ -58,36 +57,36 @@ class Tag extends CI_Controller {
 
         $json_result = $this->profile_model->all_profile();
 
-        $data["title"] = "Case Category";
-        $data["value"] = "add_tag";
+        $data["title"] = "Article Category";
+        $data["value"] = "add_category";
         $data["status"] = "";
 
         $data["name"] = "";
         $data["description"] = "";
         $this->load->view("content/component/monitoring_view", $data);
     }
-
+    
     function edit() {
         $uri = array();
         $uri = $this->get_url();
 
         $data = array();
         $data = $this->profile_model->profile_exist($uri);
-
+        
         $idData = ($this->uri->segment(5) ? $this->uri->segment(5) : "0");
 
-        $json_result = $this->kmp_model->select_special("js_case_category", "category_id", $idData);
-
+        $json_result = $this->kmp_model->select_special("js_category", "category_id", $idData);
+        
         $data = array_merge($data, $json_result);
 
 //        print_r($data);
-        $data["title"] = "Case Category";
-        $data["value"] = "edit_tag";
+        $data["title"] = "Article Category";
+        $data["value"] = "edit_category";
         $data["status"] = "";
         $this->load->view("content/component/monitoring_view", $data);
     }
 
-    function insert_tag() {
+    function insert_category() {
         $uri = array();
         $uri = $this->get_url();
 
@@ -98,13 +97,13 @@ class Tag extends CI_Controller {
         $input["name"] = $name;
         $input["description"] = $description;
 
-        if ($this->kmp_model->insert_special("js_case_category", "name", $name, $input)) {
+        if ($this->kmp_model->insert_special("js_category", "name", $name, $input)) {
             // redirect to table when its success
-            redirect(base_url("/tag/data/" . $uri['enc_email']) . "/" . $uri['group'], 'refresh');
+            redirect(base_url("/category/data/" . $uri['enc_email']) . "/" . $uri['group'], 'refresh');
         } else {
             // give status in current page
-            $data["title"] = "User Level";
-            $data["value"] = "add_tag";
+            $data["title"] = "Article Category";
+            $data["value"] = "add_category";
 
             $data["name"] = $name;
             $data["description"] = $description;
@@ -113,7 +112,7 @@ class Tag extends CI_Controller {
         }
     }
 
-    function edit_tag() {
+    function edit_category() {
         $uri = array();
         $uri = $this->get_url();
 
@@ -127,11 +126,11 @@ class Tag extends CI_Controller {
 
         $where = array();
         $where["category_id"] = $data_id;
-
-        $this->kmp_model->update_special("js_case_category", $where, $input);
-        redirect(base_url("/tag/data/" . $uri['enc_email'] . "/" . $uri['group']), 'refresh');
+        
+        $this->kmp_model->update_special("js_category", $where, $input);
+        redirect(base_url("/category/data/" . $uri['enc_email'] . "/" . $uri['group']), 'refresh');
     }
-
+    
     function delete() {
         $uri = array();
         $uri = $this->get_url();
@@ -140,9 +139,9 @@ class Tag extends CI_Controller {
 
         $where = array();
         $where["category_id"] = $idData;
-
-        $this->kmp_model->delete_special("js_case_category", $where);
-        redirect(base_url("/tag/data/" . $uri['enc_email'] . "/" . $uri['group']), 'refresh');
+        
+        $this->kmp_model->delete_special("js_category", $where);
+        redirect(base_url("/category/data/" . $uri['enc_email'] . "/" . $uri['group']), 'refresh');
     }
 
 }
