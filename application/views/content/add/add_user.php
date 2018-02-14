@@ -6,8 +6,8 @@
 
         <div class="tab-content">
             <!--<div class="tab-pane" id="settings">-->
-            <?php // echo $status; ?>
-            <form class="form-horizontal" action="<?php echo base_url('/service/submit_edit_profile/') ?>" method="post">
+            <?php echo $status; ?>
+            <form class="form-horizontal" action="<?php echo base_url('/user/insert_user/') ?>" method="post">
                 <div class="form-group">
                     <label for="inputName" class="col-sm-2 control-label">Name</label>
                     <div class="col-sm-10">
@@ -35,7 +35,7 @@
                 <div class="form-group">
                     <label for="inputRole" class="col-sm-2 control-label">Job Title</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputRole" name="role">
+                        <input type="text" class="form-control" id="inputRole" name="job_title">
                     </div>
                 </div>
                 <div class="form-group">
@@ -63,9 +63,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputBirhtday" class="col-sm-2 control-label">Birhtday</label>
+                    <label for="inputBirhtday" class="col-sm-2 control-label">Birthday</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                        <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" name="birthday">
                         <!--<input type="text" class="form-control" id="datepicker" name="birhtday" value="<?php // echo $birhtday;  ?>">-->
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                     <label for="inputBio" class="col-sm-2 control-label">Bio</label>
                     <div class="col-sm-10">
                         <!--<input type="textarea" row class="form-control" id="inputBirhtday" name="bio" value="<?php // echo $bio;  ?>">-->
-                        <textarea class="form-control" rows="3" id="inputBio"></textarea>
+                        <textarea class="form-control" rows="3" id="inputBio" name="short_bio" ></textarea>
                     </div>
                 </div>
                 <div class="form-group">
