@@ -8,7 +8,7 @@ if (!defined('BASEPATH'))
  * author : Parama Fadli Kurnia
  */
 
-class Operational extends CI_Controller {
+class Lawyer extends CI_Controller {
     /* put your code here */
 
     // constructor
@@ -31,7 +31,6 @@ class Operational extends CI_Controller {
     /* load login_view */
 
     function index() {
-        
     }
 
     function data() {
@@ -41,10 +40,10 @@ class Operational extends CI_Controller {
         $data = array();
         $data = $this->profile_model->profile_exist($uri);
 
-        $json_result = $this->kmp_model->getAllData("js_operational_cost");
+        $json_result = $this->kmp_model->getAllData("js_lawyer");
 
-        $data["title"] = "Operational Cost";
-        $data["value"] = "operational";
+        $data["title"] = "Lawyer";
+        $data["value"] = "lawyer";
         $data["json_result"] = $json_result;
         $this->load->view("content/component/monitoring_view", $data);
     }
@@ -58,37 +57,36 @@ class Operational extends CI_Controller {
 
 //        $json_result = $this->profile_model->all_profile();
 
-        $data["title"] = "Operational Cost";
-        $data["value"] = "add_operational";
+        $data["title"] = "Lawyer";
+        $data["value"] = "add_lawyer";
         $data["status"] = "";
 
         $data["name"] = "";
-        $data["percentage"] = "";
         $data["description"] = "";
         $this->load->view("content/component/monitoring_view", $data);
     }
-
+    
     function edit() {
         $uri = array();
         $uri = $this->get_url();
 
         $data = array();
         $data = $this->profile_model->profile_exist($uri);
-
+        
         $idData = ($this->uri->segment(5) ? $this->uri->segment(5) : "0");
 
-        $json_result = $this->kmp_model->select_special("js_operational_cost", "operational_id", $idData);
-
+        $json_result = $this->kmp_model->select_special("js_lawyer", "lawyer_id", $idData);
+        
         $data = array_merge($data, $json_result);
 
 //        print_r($data);
-        $data["title"] = "Operational Cost";
-        $data["value"] = "edit_operational";
+        $data["title"] = "Lawyer";
+        $data["value"] = "edit_lawyer";
         $data["status"] = "";
         $this->load->view("content/component/monitoring_view", $data);
     }
 
-    function insert_operational() {
+    function insert_lawyer() {
         $uri = array();
         $uri = $this->get_url();
         
@@ -96,51 +94,46 @@ class Operational extends CI_Controller {
         $data = $this->profile_model->profile_exist($uri);
 
         $name = $_POST['name'];
-        $percentage = $_POST['percentage'];
         $description = $_POST['description'];
 
         $input = array();
         $input["name"] = $name;
-        $input["percentage"] = $percentage;
         $input["description"] = $description;
 
-        if ($this->kmp_model->insert_special("js_operational_cost", "name", $name, $input)) {
+        if ($this->kmp_model->insert_special("js_lawyer", "name", $name, $input)) {
             // redirect to table when its success
-            redirect(base_url("/operational/data/" . $uri['enc_email']) . "/" . $uri['group'], 'refresh');
+            redirect(base_url("/lawyer/data/" . $uri['enc_email']) . "/" . $uri['group'], 'refresh');
         } else {
             // give status in current page
-            $data["title"] = "Operational Cost";
-            $data["value"] = "add_operational";
+            $data["title"] = "Lawyer";
+            $data["value"] = "add_lawyer";
 
             $data["name"] = $name;
-            $data["percentage"] = $percentage;
             $data["description"] = $description;
             $data["status"] = '<font color="red">This data already exist</font>';
             $this->load->view('content/component/monitoring_view', $data);
         }
     }
 
-    function edit_operational() {
+    function edit_lawyer() {
         $uri = array();
         $uri = $this->get_url();
 
         $data_id = $_POST['data_id'];
         $name = $_POST['name'];
-        $percentage = $_POST['percentage'];
         $description = $_POST['description'];
 
         $input = array();
         $input["name"] = $name;
-        $input["percentage"] = $percentage;
         $input["description"] = $description;
 
         $where = array();
-        $where["operational_id"] = $data_id;
-
-        $this->kmp_model->update_special("js_operational_cost", $where, $input);
-        redirect(base_url("/operational/data/" . $uri['enc_email'] . "/" . $uri['group']), 'refresh');
+        $where["lawyer_id"] = $data_id;
+        
+        $this->kmp_model->update_special("js_lawyer", $where, $input);
+        redirect(base_url("/lawyer/data/" . $uri['enc_email'] . "/" . $uri['group']), 'refresh');
     }
-
+    
     function delete() {
         $uri = array();
         $uri = $this->get_url();
@@ -148,10 +141,10 @@ class Operational extends CI_Controller {
         $idData = ($this->uri->segment(5) ? $this->uri->segment(5) : "0");
 
         $where = array();
-        $where["operational_id"] = $idData;
-
-        $this->kmp_model->delete_special("js_operational_cost", $where);
-        redirect(base_url("/operational/data/" . $uri['enc_email'] . "/" . $uri['group']), 'refresh');
+        $where["lawyer_id"] = $idData;
+        
+        $this->kmp_model->delete_special("js_lawyer", $where);
+        redirect(base_url("/lawyer/data/" . $uri['enc_email'] . "/" . $uri['group']), 'refresh');
     }
 
 }

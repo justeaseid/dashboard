@@ -89,6 +89,9 @@ class Level extends CI_Controller {
     function insert_level() {
         $uri = array();
         $uri = $this->get_url();
+        
+        $data = array();
+        $data = $this->profile_model->profile_exist($uri);
 
         $name = $_POST['name'];
         $description = $_POST['description'];
