@@ -31,6 +31,7 @@ class Lawyer extends CI_Controller {
     /* load login_view */
 
     function index() {
+        
     }
 
     function data() {
@@ -62,21 +63,24 @@ class Lawyer extends CI_Controller {
         $data["status"] = "";
 
         $data["name"] = "";
+        $data["specialization"] = "";
+        $data["organization"] = "";
+        $data["id_card"] = "";
         $data["description"] = "";
         $this->load->view("content/component/monitoring_view", $data);
     }
-    
+
     function edit() {
         $uri = array();
         $uri = $this->get_url();
 
         $data = array();
         $data = $this->profile_model->profile_exist($uri);
-        
+
         $idData = ($this->uri->segment(5) ? $this->uri->segment(5) : "0");
 
         $json_result = $this->kmp_model->select_special("js_lawyer", "lawyer_id", $idData);
-        
+
         $data = array_merge($data, $json_result);
 
 //        print_r($data);
@@ -89,15 +93,21 @@ class Lawyer extends CI_Controller {
     function insert_lawyer() {
         $uri = array();
         $uri = $this->get_url();
-        
+
         $data = array();
         $data = $this->profile_model->profile_exist($uri);
 
         $name = $_POST['name'];
+        $specialization = $_POST['specialization'];
+        $organization = $_POST['organization'];
+        $id_card = $_POST['id_card'];
         $description = $_POST['description'];
 
         $input = array();
         $input["name"] = $name;
+        $input["specialization"] = $specialization;
+        $input["organization"] = $organization;
+        $input["id_card"] = $id_card;
         $input["description"] = $description;
 
         if ($this->kmp_model->insert_special("js_lawyer", "name", $name, $input)) {
@@ -109,6 +119,9 @@ class Lawyer extends CI_Controller {
             $data["value"] = "add_lawyer";
 
             $data["name"] = $name;
+            $data["specialization"] = $specialization;
+            $data["organization"] = $organization;
+            $data["id_card"] = $id_card;
             $data["description"] = $description;
             $data["status"] = '<font color="red">This data already exist</font>';
             $this->load->view('content/component/monitoring_view', $data);
@@ -121,19 +134,25 @@ class Lawyer extends CI_Controller {
 
         $data_id = $_POST['data_id'];
         $name = $_POST['name'];
+        $specialization = $_POST['specialization'];
+        $organization = $_POST['organization'];
+        $id_card = $_POST['id_card'];
         $description = $_POST['description'];
 
         $input = array();
         $input["name"] = $name;
+        $input["specialization"] = $specialization;
+        $input["organization"] = $organization;
+        $input["id_card"] = $id_card;
         $input["description"] = $description;
 
         $where = array();
         $where["lawyer_id"] = $data_id;
-        
+
         $this->kmp_model->update_special("js_lawyer", $where, $input);
         redirect(base_url("/lawyer/data/" . $uri['enc_email'] . "/" . $uri['group']), 'refresh');
     }
-    
+
     function delete() {
         $uri = array();
         $uri = $this->get_url();
@@ -142,7 +161,7 @@ class Lawyer extends CI_Controller {
 
         $where = array();
         $where["lawyer_id"] = $idData;
-        
+
         $this->kmp_model->delete_special("js_lawyer", $where);
         redirect(base_url("/lawyer/data/" . $uri['enc_email'] . "/" . $uri['group']), 'refresh');
     }
