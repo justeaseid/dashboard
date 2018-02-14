@@ -107,7 +107,7 @@ class Category extends CI_Controller {
 
             $data["name"] = $name;
             $data["description"] = $description;
-            $data["status"] = '<font color="red">Registration Failed!This data already exist</font>';
+            $data["status"] = '<font color="red">This data already exist</font>';
             $this->load->view('content/component/monitoring_view', $data);
         }
     }

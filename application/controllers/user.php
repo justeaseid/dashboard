@@ -60,7 +60,7 @@ class User extends CI_Controller {
         $data = array();
         $data = $this->profile_model->profile_exist($uri);
 
-        $json_result = $this->profile_model->all_profile();
+//        $json_result = $this->profile_model->all_profile();
 
         $data["title"] = "User";
         $data["value"] = "add_user";
@@ -112,7 +112,7 @@ class User extends CI_Controller {
         } else {
             // give return value 'status' Success and redirect page to log in form
             $data["email"] = "";
-            $data["status"] = '<font color="red">Registration Failed!This user already exist</font>';
+            $data["status"] = '<font color="red">This user already exist</font>';
             $this->load->view('content/main/register_view', $data);
         }
     }

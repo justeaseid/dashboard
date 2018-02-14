@@ -56,7 +56,7 @@ class Tag extends CI_Controller {
         $data = array();
         $data = $this->profile_model->profile_exist($uri);
 
-        $json_result = $this->profile_model->all_profile();
+//        $json_result = $this->profile_model->all_profile();
 
         $data["title"] = "Case Category";
         $data["value"] = "add_tag";
@@ -108,7 +108,7 @@ class Tag extends CI_Controller {
 
             $data["name"] = $name;
             $data["description"] = $description;
-            $data["status"] = '<font color="red">Registration Failed!This data already exist</font>';
+            $data["status"] = '<font color="red">This data already exist</font>';
             $this->load->view('content/component/monitoring_view', $data);
         }
     }
