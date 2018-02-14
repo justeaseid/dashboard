@@ -32,6 +32,10 @@ class Profile_model extends CI_Model {
             return FALSE;
         }
     }
+    
+    function insert($table, $data) {
+        $this->db->insert($table, $data);
+    }
 
     function login_profile($email, $password) {
         $q = "";
