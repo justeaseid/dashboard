@@ -22,3 +22,4 @@
 <meta property="og:card" content="justease Platform galang dana dan donasi online untuk kasus hukum untuk siapapun & di manapun">
 <meta property="og:site" content="http://admin.justease.id/">
 <meta property="og:creator" content="justease-admin">
+<meta name="google-site-verification" content="P0FkDRxJkwDaiKg7LS7JjRsb-iJ3P0elG41TSjDoPac" />
