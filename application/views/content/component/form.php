@@ -27,6 +27,12 @@
                     $this->load->view('content/add/add_category');
                 } else if ($value == "edit_category") {
                     $this->load->view('content/edit/edit_category');
+                } else if ($value == "operational") {
+                    $this->load->view('content/tables/table_operational');
+                } else if ($value == "add_operational") {
+                    $this->load->view('content/add/add_operational');
+                } else if ($value == "edit_operational") {
+                    $this->load->view('content/edit/edit_operational');
                 }
                 ?>
             </div>
