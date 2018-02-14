@@ -21,6 +21,12 @@
                     $this->load->view('content/add/add_tag');
                 } else if ($value == "edit_tag") {
                     $this->load->view('content/edit/edit_tag');
+                } else if ($value == "category") {
+                    $this->load->view('content/tables/table_category');
+                } else if ($value == "add_category") {
+                    $this->load->view('content/add/add_category');
+                } else if ($value == "edit_category") {
+                    $this->load->view('content/edit/edit_category');
                 }
                 ?>
             </div>
