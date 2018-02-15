@@ -39,16 +39,17 @@
                         echo "<td>" . $row['created_date'] . "</td>";
                         echo "<td>" . $row['gender'] . "</td>";
                         
-                        $status = "";
-                        $statusAcc = $row['status_account'];
-                        if($statusAcc=="1"){
-                            $status = "active";
-                        }else{
-                            $status = "inactive";
-                        }
+                        $status = $row['status_account'];
+//                        $status = "";
+//                        $statusAcc = $row['status_account'];
+//                        if($statusAcc=="1"){
+//                            $status = "active";
+//                        }else{
+//                            $status = "inactive";
+//                        }
                         echo "<td>" . $status . "</td>";
-                        echo '<td><button id="add' . $i . '" type="" class="btn btn-primary" onclick="add_instagram(' . $row['user_id'] . ');">Edit</button></td>';
-                        echo '<td><button id="delete' . $i . '" type="" class="btn btn-danger" onclick="delete_instagram(' . $row['user_id'] . ');">Delete</button></td>';
+                        echo '<td><button id="add' . $i . '" type="" class="btn btn-primary" onclick="edit_data(' . $row['user_id'] . ');">Edit</button></td>';
+                        echo '<td><button id="delete' . $i . '" type="" class="btn btn-danger" onclick="delete_data(' . $row['user_id'] . ');">Delete</button></td>';
                         echo "</tr>";
                         $i++;
                     }
@@ -74,15 +75,11 @@
 
 <script>
     //2014-02-10 - 2015-08-20
-    function view(instagram_id) {
-        window.open("<?php // echo INSTAGRAM ?>/" + instagram_id, '_blank');
+    function delete_data(data_id) {
+        top.location = "<?php echo base_url('/user/delete/' . $url . '/' . $id_user) ?>/" + data_id;
     }
 
-    function delete_instagram(instagram_id) {
-        top.location = "<?php echo base_url('/instagram/page_delete/' . $url . '/' . $id_user) ?>/" + instagram_id;
-    }
-
-    function add_instagram(instagram_id) {
-        top.location = "<?php echo base_url('/instagram/page_add/' . $url . '/' . $id_user) ?>/" + instagram_id;
+    function edit_data(data_id) {
+        top.location = "<?php echo base_url('/user/edit/' . $url . '/' . $id_user) ?>/" + data_id;
     }
 </script>

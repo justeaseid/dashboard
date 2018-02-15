@@ -7,7 +7,8 @@
         <div class="tab-content">
             <!--<div class="tab-pane" id="settings">-->
             <?php echo $status; ?>
-            <form class="form-horizontal" action="<?php echo base_url('/user/insert_user/'.$url.'/1') ?>" method="post">
+            <form class="form-horizontal" action="<?php echo base_url('/user/edit_user/'.$url.'/1') ?>" method="post">
+                <input type="hidden" name="data_id" value="<?php echo $user_id; ?>" />
                 <div class="form-group">
                     <label for="inputName" class="col-sm-2 control-label">Name</label>
                     <div class="col-sm-10">

@@ -17,9 +17,10 @@
                                 foreach ($data_result->result_array() as $row) {
                                     if ($i == 0) {
                                         if ($user_id == "") {
-                                            echo '<option value="all" selected="selected">-- Name --</option>';
+                                            echo '<option value="1" selected="selected">-- Name --</option>';
                                         } else {
-                                            echo '<option value="' . $user_id . '" selected="selected">' . $name . '</option>';
+                                            echo '<option value="' . $user_id . '" selected="selected">-- Name --</option>';
+//                                            echo '<option value="' . $user_id . '" selected="selected">' . $name . '</option>';
                                         }
                                     }
                                     echo '<option value="' . $row['user_id'] . '">' . $row['name'] . '</option>';
