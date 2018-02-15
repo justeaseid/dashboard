@@ -112,7 +112,7 @@ $autoload['language'] = array();
   |
  */
 
-$autoload['model'] = array('kmp_model', 'profile_model');
+$autoload['model'] = array('kmp_model', 'profile_model', 'analytics_model');
 
 
 /* End of file autoload.php */
