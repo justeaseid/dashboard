@@ -20,7 +20,7 @@ class Kmp_model extends CI_Model {
 
     function getAllData($table) {
         $q = "";
-        $q = "SELECT * FROM $table";
+        $q = "SELECT * FROM $table order by created_date DESC limit 0,100;";
         $result = $this->db->query($q);
         return $result;
     }
