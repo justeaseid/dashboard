@@ -45,6 +45,12 @@
                     $this->load->view('content/add/add_lawyer');
                 } else if ($value == "edit_lawyer") {
                     $this->load->view('content/edit/edit_lawyer');
+                } else if ($value == "log") {
+                    $this->load->view('content/tables/table_log');
+                } else if ($value == "add_log") {
+                    $this->load->view('content/add/add_log');
+                } else if ($value == "edit_log") {
+                    $this->load->view('content/edit/edit_log');
                 }
                 ?>
             </div>
