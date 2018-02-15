@@ -146,7 +146,7 @@ class User extends CI_Controller {
         $input["username"] = $username;
         $input["id_card"] = $id_card;
         $input["email"] = $email;
-        $input["password"] = $password;
+        $input["password"] = $this->functional->encrypt($password);
         $input["job_title"] = $job_title;
         $input["phone_number"] = $phone;
         $input["country"] = $country;
@@ -206,7 +206,8 @@ class User extends CI_Controller {
         $name = $_POST['name'];
         $id_card = $_POST['idcard'];
         $email = $_POST['email'];
-        $password = $_POST['password'];
+        $username = str_replace(" ", "-", strtolower($name));
+        $password = $this->functional->encrypt($_POST['password']);
         $job_title = $_POST['job_title'];
         $phone = $_POST['phone_number'];
         $country = $_POST['country'];
@@ -220,6 +221,7 @@ class User extends CI_Controller {
 
         $input = array();
         $input["name"] = $name;
+        $input["username"] = $username;
         $input["id_card"] = $id_card;
         $input["email"] = $email;
         $input["password"] = $password;
