@@ -24,5 +24,19 @@ class Analytics_model extends CI_Model {
         $result = $this->db->query($q);
         return $result;
     }
+    
+    function getCampaign() {
+        $q = "";
+        $q = "SELECT `campaign_id`, ju.name as username, `titles`, `approved_donation`, joc.name as percentage,
+                jc.`city`, `verification_status`, `status`
+                FROM `js_campaign` jc, `js_user` ju, `js_category` jct, `js_operational_cost` joc
+                WHERE jc.`user_id` = ju.`user_id`
+                AND jc.`category_id` = jct.`category_id`
+                AND jc.`operational_id` = joc.`operational_id`
+                order by jc.created_date DESC
+                limit 0,100";
+        $result = $this->db->query($q);
+        return $result;
+    }
 
 }
