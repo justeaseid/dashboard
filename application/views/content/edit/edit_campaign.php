@@ -242,6 +242,12 @@
                         <input type="text" class="form-control" id="inputVerCode" name="verification_code" value="<?php echo $verification_code; ?>">
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="inputPP" class="col-sm-2 control-label">Cover Photo</label>
+                    <div class="col-sm-10">
+                        <input type="file" id="inputPP" name="cover_photo">
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
