@@ -15,8 +15,8 @@
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Name</th>
+                    <th>Campaign</th>
+                    <th>Creator</th>
                     <th>Apv. Donation</th>
                     <th>Ops. Cost</th>
                     <th>city</th>
@@ -51,8 +51,8 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <th>Title</th>
-                    <th>Name</th>
+                    <th>Campaign</th>
+                    <th>Creator</th>
                     <th>Apv. Donation</th>
                     <th>Ops. Cost</th>
                     <th>city</th>
