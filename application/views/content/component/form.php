@@ -63,6 +63,12 @@
                     $this->load->view('content/add/add_report');
                 } else if ($value == "edit_report") {
                     $this->load->view('content/edit/edit_report');
+                } else if ($value == "donation") {
+                    $this->load->view('content/tables/table_donation');
+                } else if ($value == "add_donation") {
+                    $this->load->view('content/add/add_donation');
+                } else if ($value == "edit_donation") {
+                    $this->load->view('content/edit/edit_donation');
                 }
                 ?>
             </div>
