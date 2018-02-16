@@ -42,7 +42,8 @@ class Profile_model extends CI_Model {
         $password = $this->functional->encrypt($password);
         $q = "SELECT * FROM js_user "
                 . "WHERE email = '$email' "
-                . "AND password = '$password'";
+                . "AND password = '$password' "
+                . "AND status = 'active'";
         //echo $q;
         // output: all user information
         $result = $this->db->query($q);
