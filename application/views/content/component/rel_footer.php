@@ -35,14 +35,20 @@
 <script>
     $(function () {
         var picker = new Pikaday({
-            field: document.getElementById('birthday'),
+            field: document.getElementById('strdate'),
             format: 'YYYY-MM-DD',
-            yearRange: [1976,2016]
+            yearRange: [1976,2021],
         });
 
         var picker1 = new Pikaday({
-            field: document.getElementById('to'),
+            field: document.getElementById('strdate1'),
             format: 'YYYY-MM-DD',
+            yearRange: [1976,2021],
         });
+        
+//        var picker2 = new Pikaday({
+//            field: document.getElementById('launch_date'),
+//            format: 'YYYY-MM-DD',
+//        });
     });
 </script>
