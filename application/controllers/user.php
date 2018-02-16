@@ -204,6 +204,7 @@ class User extends CI_Controller {
 
         $data_id = $_POST['data_id'];
         $name = $_POST['name'];
+        $level_id = $_POST['level_id'];
         $id_card = $_POST['idcard'];
         $email = $_POST['email'];
         $username = str_replace(" ", "-", strtolower($name));
@@ -223,6 +224,7 @@ class User extends CI_Controller {
         $input["name"] = $name;
         $input["username"] = $username;
         $input["id_card"] = $id_card;
+        $input["level_id"] = $level_id;
         $input["email"] = $email;
         $input["password"] = $password;
         $input["job_title"] = $job_title;

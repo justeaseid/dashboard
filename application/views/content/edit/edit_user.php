@@ -92,7 +92,7 @@
                     <label for="inputBirhtday" class="col-sm-2 control-label">Birthday</label>
                     <div class="col-sm-10">
                         <!--<input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" name="birthday" value="<?php // echo $email;  ?>">-->
-                        <input type="text" class="form-control" id="datepicker" name="birthday" value="<?php echo $birthday; ?>">
+                        <input type="text" class="form-control" id="birthday" name="birthday" value="<?php echo $birthday; ?>">
                     </div>
                 </div>
                 <div class="form-group">
