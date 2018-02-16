@@ -64,5 +64,18 @@ class Analytics_model extends CI_Model {
         $result = $this->db->query($q);
         return $result;
     }
+    
+    function getBlog() {
+        $q = "";
+        $q = "SELECT `article_id`, jb.titles, ju.name as username, 
+                jc.name as category, `is_published`
+                FROM `js_blog` jb, `js_user` ju, `js_category` jc
+                WHERE jb.`user_id` = ju.`user_id`
+                AND jb.`category_id` = jc.`category_id`
+                order by jb.created_date DESC
+                limit 0,100;";
+        $result = $this->db->query($q);
+        return $result;
+    }
 
 }
