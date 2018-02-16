@@ -51,6 +51,12 @@
                     $this->load->view('content/add/add_log');
                 } else if ($value == "edit_log") {
                     $this->load->view('content/edit/edit_log');
+                } else if ($value == "campaign") {
+                    $this->load->view('content/tables/table_campaign');
+                } else if ($value == "add_campaign") {
+                    $this->load->view('content/add/add_campaign');
+                } else if ($value == "edit_campaign") {
+                    $this->load->view('content/edit/edit_campaign');
                 }
                 ?>
             </div>
