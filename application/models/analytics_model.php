@@ -38,5 +38,17 @@ class Analytics_model extends CI_Model {
         $result = $this->db->query($q);
         return $result;
     }
+    
+    function getReport() {
+        $q = "";
+        $q = "SELECT jr.`report_id`, jr.`campaign_id`, ju.name as username, `titles`, jr.`is_valid`
+                FROM `js_campaign` jc, `js_user` ju, `js_report` jr
+                WHERE jr.`campaign_id` = jc.`campaign_id`
+                AND jr.`user_id` = ju.`user_id`
+                order by jr.created_date DESC
+                limit 0,100";
+        $result = $this->db->query($q);
+        return $result;
+    }
 
 }
