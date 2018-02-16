@@ -57,6 +57,12 @@
                     $this->load->view('content/add/add_campaign');
                 } else if ($value == "edit_campaign") {
                     $this->load->view('content/edit/edit_campaign');
+                } else if ($value == "report") {
+                    $this->load->view('content/tables/table_report');
+                } else if ($value == "add_report") {
+                    $this->load->view('content/add/add_report');
+                } else if ($value == "edit_report") {
+                    $this->load->view('content/edit/edit_report');
                 }
                 ?>
             </div>
