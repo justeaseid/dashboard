@@ -43,7 +43,7 @@ class Profile_model extends CI_Model {
         $q = "SELECT * FROM js_user "
                 . "WHERE email = '$email' "
                 . "AND password = '$password' "
-                . "AND status = 'active'";
+                . "AND status_account = 'active'";
         //echo $q;
         // output: all user information
         $result = $this->db->query($q);
