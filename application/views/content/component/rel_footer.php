@@ -28,3 +28,21 @@
         $(".select2").select2();
     });
 </script>
+<!-- pikaday js -->
+<script type="text/javascript" src="<?php echo GENERAL; ?>/js/pikaday/moment.js"></script>
+<script type="text/javascript" src="<?php echo GENERAL; ?>/js/pikaday/pikaday.js"></script>
+<script type="text/javascript" src="<?php echo GENERAL; ?>/js/pikaday/pikaday.jquery.js"></script>
+<script>
+    $(function () {
+        var picker = new Pikaday({
+            field: document.getElementById('birthday'),
+            format: 'YYYY-MM-DD',
+            yearRange: [1976,2016]
+        });
+
+        var picker1 = new Pikaday({
+            field: document.getElementById('to'),
+            format: 'YYYY-MM-DD',
+        });
+    });
+</script>

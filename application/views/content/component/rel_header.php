@@ -15,3 +15,5 @@
 <link rel="stylesheet" href="<?php echo GENERAL; ?>/css/general.css">
 <!-- Select2 -->
 <link rel="stylesheet" href="<?php echo PLUGINS; ?>/select2/select2.min.css">
+<!-- pikaday css-->    
+<link rel="stylesheet" type="text/css" href="<?php echo GENERAL; ?>/css/pikaday.css">
