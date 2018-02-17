@@ -19,7 +19,13 @@
                 </section>
             </aside>
             <!-- content wrapper -->
-            <?php $this->load->view('content/component/form'); ?>
+            <?php 
+            if($value=="home"){
+                $this->load->view('content/component/home');
+            }else{
+                $this->load->view('content/component/form');
+            }
+            ?>
             
             <!-- load footer view -->
             <?php $this->load->view('layout/footer/footer'); ?>
