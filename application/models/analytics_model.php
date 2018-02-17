@@ -77,5 +77,25 @@ class Analytics_model extends CI_Model {
         $result = $this->db->query($q);
         return $result;
     }
+    
+    function getSum($table, $field, $condition) {
+        $q = "";
+        $q = "SELECT SUM(`$field`) as jumlah
+                FROM `$table` $condition";
+        $query = $this->db->query($q);
+        $res = $query->result();
+        $row = (array) $res[0];
+        return $row;
+    }
+    
+    function getCount($table, $field, $condition) {
+        $q = "";
+        $q = "SELECT COUNT(`$field`) as jumlah
+                FROM `$table` $condition";
+        $query = $this->db->query($q);
+        $res = $query->result();
+        $row = (array) $res[0];
+        return $row;
+    }
 
 }
