@@ -52,7 +52,7 @@ class Profile_model extends CI_Model {
 
     function update_profile($email, $data) {
         $this->db->where('email', $email);
-        $this->db->update('user', $data);
+        $this->db->update('js_user', $data);
         // update data by email
     }
 
