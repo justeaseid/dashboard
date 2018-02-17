@@ -136,7 +136,8 @@ class Apps extends CI_Controller {
 //                $content = implode("||", $data);
                 $content = $data["name"];
                 $this->functional->save_to($email, $content, "prf");
-                redirect(base_url("/user/data/$enc_email/$id_user"), 'refresh');
+//                redirect(base_url("/user/data/$enc_email/$id_user"), 'refresh');
+                redirect(base_url("/home/analysis/$enc_email/$id_user"), 'refresh');
             } else {
                 $data["status"] = '<font color="red">Email or Password incorrect</font>';
                 $this->load->view('content/main/login_view', $data);
